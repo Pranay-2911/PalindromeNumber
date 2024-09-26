@@ -13,14 +13,8 @@ namespace PalindromeNumber
         {
             Console.WriteLine("Enter the Number");
             int number = int.Parse(Console.ReadLine());
-            if (CheckPalindrome.ToCheckPalindrome(number))
-            {
-                Console.WriteLine($"The Number {number} is Palindrome");
-            }
-            else
-            {
-                Console.WriteLine($"The Number {number} is NOt a Palindome");
-            }
+            
+            Console.WriteLine(CheckPalindrome.ToCheckPalindrome(number));
             
         }
     }

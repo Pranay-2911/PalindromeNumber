@@ -8,17 +8,30 @@ namespace PalindromeNumber.Models
 {
     internal class CheckPalindrome
     {
-        public static bool ToCheckPalindrome(int number)
+        public static string ToCheckPalindrome(int number)
         {
             int tempValue = number;
-            int Reverse = 0;
-            while (tempValue > 0)
+            int reverse = 0;
+            int minValue = 0;
+            int divisor = 10;
+            int multiple = 10;
+
+            //Perfrom the reverse of number 
+            while (tempValue > minValue)
             {
-                int lastNumber = tempValue % 10;
-                Reverse = (Reverse * 10) + lastNumber;
-                tempValue = tempValue / 10;
+                int lastNumber = tempValue % divisor;
+                reverse = (reverse * multiple) + lastNumber;
+                tempValue = tempValue / divisor;
             }
-            return Reverse == number;
+
+            //compare the reverse to the original
+            if(reverse == number)
+            {
+                return $"The Number {number} is Palindrome";
+            }
+            return $"The Number {number} is Not a Palindrome";
+
+
         }
 
     }
